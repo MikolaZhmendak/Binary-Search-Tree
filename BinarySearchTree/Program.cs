@@ -17,7 +17,7 @@ namespace BinarySearchTree
             myTree.addItem(45);
             myTree.addItem(86);
             myTree.addItem(65);
-            myTree.searchItem(45);
+            myTree.Search(45);
             Console.ReadLine();
         }
     }

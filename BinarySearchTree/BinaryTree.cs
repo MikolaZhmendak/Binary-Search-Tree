@@ -66,12 +66,53 @@ namespace BinarySearchTree
         }
            
         
-        public void searchItem (int value)
+        public bool Search( int value)
         {
+            currentNode = headNode;
+            while (currentNode.leftNode != null || currentNode.rightNode != null)
+            {
+                if (currentNode.data == value)
+                {
+                    Console.WriteLine("You are searching for the following node: " + value);
+                    Console.WriteLine("Value we found: " + currentNode.data);
+                    Console.ReadLine();
+                    return true;
+                }
 
+                else if (value < currentNode.data)
+                {
+                    Console.WriteLine("Value found: " + currentNode.data);
+                    Console.WriteLine(value + "Is less then " + currentNode.data);
+                    Console.WriteLine("We now move to the Left of the binary tree");
+                    currentNode = currentNode.leftNode;
+                   
+                }
+
+                else
+                {
+                    Console.WriteLine("The value we found:" + currentNode.data);
+                    Console.WriteLine(value + "Is greated then " + currentNode.data);
+                    Console.WriteLine("We now move to the Right of the binary tree");
+                    
+                }
+            }
+                if (currentNode.data == value)
+                {
+                    Console.WriteLine("You are searching for: " + value);
+                    Console.WriteLine("We foound: " + currentNode.data);
+                    Console.ReadLine();
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Value was not found");
+                    return false;
+                }
+            }
+    
         }
     }
-}
+
 
 
 
